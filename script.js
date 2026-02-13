@@ -2,21 +2,14 @@ function insert_Row() {
 
     let table = document.getElementById("sampleTable");
 
-    // Create new row
-    let newRow = document.createElement("tr");
+    // Insert row at position 0 (top)
+    let newRow = table.insertRow(0);
 
-    // Create cells
-    let cell1 = document.createElement("td");
-    let cell2 = document.createElement("td");
+    // Insert cells
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
 
     // Add text
-    cell1.textContent = "New Cell1";
-    cell2.textContent = "New Cell2";
-
-    // Append cells to row
-    newRow.appendChild(cell1);
-    newRow.appendChild(cell2);
-
-    // Insert row at top (before first row)
-    table.insertBefore(newRow, table.rows[0]);
+    cell1.innerHTML = "New Cell1";
+    cell2.innerHTML = "New Cell2";
 }
